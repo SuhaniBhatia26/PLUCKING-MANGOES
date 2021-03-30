@@ -1,4 +1,3 @@
-
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -67,6 +66,7 @@ function draw() {
 
 function mouseDragged(){
 	Matter.Body.setPosition(stone.body,{x:mouseX,y:mouseY});
+}
 	
 	function mouseReleased(){
 		launcherObject.fly();
@@ -76,12 +76,12 @@ function detectCollision(stone,mango){
 mangoBodyPosition=mangobody.position
 stoneBodyPosition=stonebody.position
 
-var distance=dist(stoneBodyPosition.x,stoneBodyPosition.y,mangoBodyPosition.x,mangoBodyPosition.y)
-if(distance<=mango.r+stone.r){
+	var distance=dist(stoneBodyPosition.x,stoneBodyPosition.y,mangoBodyPosition.x,mangoBodyPosition.y)
+	if(distance<=mango.r+stone.r){
 	Matter.Body.setStatic(mango.body,false);
 }
 }
-}
+
 
 function keyPressed(){
 	if(keyCode===32){
@@ -89,5 +89,6 @@ function keyPressed(){
 		launcherObject.attach(stoneObj.body);
 	}
 }
+
 
 
